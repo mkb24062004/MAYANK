@@ -1,6 +1,5 @@
-EXPERIMENT:2
-AIM: Convert the coordinates of a point from/to Cartesian and 
-spherical coordinate system.
+//EXPERIMENT:2
+//AIM: Convert the coordinates of a point from/to Cartesian and spherical coordinate system.
 // MAYANK BARMAN
 //8562
 clc;
