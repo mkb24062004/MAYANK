@@ -1,0 +1,14 @@
+clc
+clf
+clear
+// Define the points
+x_points = [0, 3, 2, 0];
+y_points = [0, 5, 7, 0];
+// Plot the path
+plot(x_points, y_points, '-o');
+title('Path of a Vector');
+xlabel('X');
+ylabel('Y');
+// Set limits for the axes
+xgrid(); // Add grid
+xtitle('Path of a Vector', 'X', 'Y');
