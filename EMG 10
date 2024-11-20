@@ -1,4 +1,6 @@
-clc;clf;clear;
+clc;
+clf;
+clear;
 //Electric field due to charged conducting cylinder
 //Electric potential due to charged conducting cylinder
 //MAYANK BARMAN
