@@ -1,0 +1,29 @@
+Aim - Radial profile of Electric field and Electric potential due to a Uniformely charged Conducting Sphere
+
+clc;
+clear;
+clf; 
+q =10
+k =9e9
+R = 4
+//Defining the Values of X
+X1 = linspace(0.01,R,100)
+X2 = linspace(R,10*R,100)
+E1 = zeros(100)
+E2 = k.*q./X2.^2
+//Plotting the Electric Field
+subplot(2,2,1) plot(X1,E1)
+plot(X2,E2) xlabel("x")
+ylabel("E")
+title("Radial profile of Electric field due to a Uniformely
+charged Conducting Sphere") //Plotting the Electric
+potential
+V1 = k.*q./R V2
+= k.*q./X2
+subplot(2,2,2)
+plot(X1,V1)
+plot(X2,V2)
+xlabel("x")
+ylabel("V")
+title("Radial profile of Electric potential due to a Uniformely
+charged Conducting Sphere")
