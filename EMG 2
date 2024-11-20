@@ -1,0 +1,36 @@
+EXPERIMENT:2
+AIM: Convert the coordinates of a point from/to Cartesian and 
+spherical coordinate system.
+// MAYANK BARMAN
+//8562
+clc;
+clf;
+clear;
+// Cartesian to Spherical
+function [r, theta, phi]=cartesian_to_spherical(x, y, z)
+r = sqrt(x^2 + y^2 + z^2); // Calculate radial distance
+theta = atan(y, x); // Calculate azimuthal angle
+phi = atan(sqrt(x^2 + y^2), z); // Calculate polar angle
+endfunction
+// Spherical to Cartesian
+function [x, y, z]=spherical_to_cartesian(r, theta, phi)
+x = r * sin(phi) * cos(theta); // Calculate x coordinate
+y = r * sin(phi) * sin(theta); // Calculate y coordinate
+z = r * cos(phi); // Calculate z coordinate
+endfunction
+// User Input for Cartesian to Spherical
+disp("Enter Cartesian coordinates (x, y, z):");
+x = input("x = ");
+y = input("y = ");
+z = input("z = ");
+[r, theta, phi] = cartesian_to_spherical(x, y, z);
+disp("Spherical coordinates are [r, theta, phi]:");
+disp([r, theta, phi]);
+// User Input for Spherical to Cartesian
+disp("Enter Spherical coordinates (r, theta, phi):");
+r = input("r = ");
+theta = input("theta (in radians) = ");
+phi = input("phi (in radians) = ");
+[x_cart, y_cart, z_cart] = spherical_to_cartesian(r, theta, phi);
+disp("Cartesian coordinates are [x, y, z]:");
+disp([x_cart, y_cart, z_cart])
