@@ -1,8 +1,7 @@
 //MAyank BARMAN 
 //8562 
 //EXPERIMENT:3 
-//AIM: Convert the coordinates of a point from/to spherical and 
-cylindrical coordinate system. 
+//AIM: Convert the coordinates of a point from/to spherical and cylindrical coordinate system. 
 clc;
 clf;
 clear;
