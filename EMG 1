@@ -1,0 +1,37 @@
+//EXPERIMENT:1
+//AIM: Convert the coordinates of a point from/to Cartesian and 
+cylindrical coordinate system.
+//MAYANK BARMAN
+//8562
+clc
+clf
+clear
+// Function to Convert Cartesian to Cylindrical
+function [r, theta, z_cyl]=cartesian_to_cylindrical(x, y, z)
+r = sqrt(x^2 + y^2); // Calculate radial distance
+theta = atan(y, x); // Calculate azimuthal angle
+z_cyl = z; // z remains unchanged
+endfunction
+// Function to Convert Cylindrical to Cartesian
+function [x, y, z_cart]=cylindrical_to_cartesian(r, theta, z)
+x = r * cos(theta); // Calculate x coordinate
+y = r * sin(theta); // Calculate y coordinate
+z_cart = z; // z remains unchanged
+endfunction
+ disp("Enter Cartesian coordinates (x, y, z):");
+ x = input("x = ");
+ y = input("y = ");
+ z = input("z = ");
+// Conversion from Cartesian to Cylindrical
+ [r, theta, z_cyl] = cartesian_to_cylindrical(x, y, z);
+ disp("Cylindrical coordinates are [r, theta, z]:");
+ disp([r, theta, z_cyl]);
+ disp("Enter Cylindrical coordinates (r, theta in radians, z):");
+ r = input("r = ");
+ theta = input("theta (in radians) = ");
+ z_cyl = input("z = ");
+// Conversion from Cylindrical to Cartesian
+ [x_cart, y_cart, z_cart] = cylindrical_to_cartesian(r, 
+theta,z_cyl);
+ disp("Cartesian coordinates are [x, y, z]:");
+ disp([x_cart, y_cart, z_cart]);
