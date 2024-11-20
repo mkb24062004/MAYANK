@@ -1,0 +1,43 @@
+//MAyank BARMAN 
+//8562 
+//EXPERIMENT:3 
+//AIM: Convert the coordinates of a point from/to spherical and 
+cylindrical coordinate system. 
+clc;
+clf;
+clear;
+// Function to convert from spherical to cylindrical 
+function [rho, theta, z]=spherical_to_cylindrical(r, theta, phi) 
+rho = r * sin(phi);
+z = r * cos(phi);
+endfunction 
+// Function to convert from cylindrical to spherical 
+function [r, theta, phi]=cylindrical_to_spherical(rho, theta, z) 
+r = sqrt(rho^2 + z^2);
+phi = atan(rho / z);
+endfunction 
+// User Input for spherical to cylindrical conversion 
+disp("Convert from Spherical to Cylindrical");
+r = input("Enter radial distance (r): ");
+theta = input("Enter azimuthal angle (theta in radians): ");
+phi = input("Enter polar angle (phi in radians): ");
+// Call the spherical_to_cylindrical function 
+[rho, theta_cyl, z_cyl] = spherical_to_cylindrical(r, theta, phi);
+// Display the result 
+disp("Cylindrical Coordinates:");
+disp("rho = " + string(rho));
+disp("theta = " + string(theta_cyl));
+disp("z = " + string(z_cyl));
+// User Input for cylindrical to spherical conversion 
+disp("Convert from Cylindrical to Spherical");
+rho = input("Enter radial distance (rho): ");
+theta = input("Enter azimuthal angle (theta in radians): ");
+z = input("Enter height (z): ");
+// Call the cylindrical_to_spherical function 
+[r_sph, theta_sph, phi_sph] = cylindrical_to_spherical(rho, theta, 
+z);
+// Display the result 
+disp("Spherical Coordinates:");
+disp("r = " + string(r_sph));
+disp("theta = " + string(theta_sph));
+disp("phi = " + string(phi_sph))
