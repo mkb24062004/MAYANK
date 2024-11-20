@@ -1,0 +1,24 @@
+//AIM: sketch the flow electric field due to 2 different charges 
+located at 2 different points in the xy plane?
+//mayank barman
+//8562
+clc;
+clear;
+clf;
+q1 = input("enter the value of q1:")
+q2 = input("enter the value of q2:")
+x1 = input("enter the value of x-plane for q1:")
+x2 = input("enter the value of x-plane for q2:")
+y1 = input("enter the value of y-plane for q1:")
+y2 = input("enter the value of y-plane for q2:")
+e_o = 8.85*10^-12
+e_r = input("enter the value for epsilon_r:")
+k = 1/(4*%pi*e_o*e_r)
+x = linspace(min(x1,x2)-1,max(x1,x2)+1,20)
+y = linspace(min(y1,y2)-1,max(y1,y2)+1,20)
+[X,Y] = meshgrid(x,y)
+ex1 = k*q1.*(x1-X)./((x1-X).^2+(y1-Y).^2).^1.5
+ex2 = k*q2.*(x2-X)./((x2-X).^2+(y2-Y).^2).^1.5
+ey1 = k*q1.*(y1-Y)./((y1-Y).^2+(x1-X).^2).^1.5
+ey2 = k*q2.*(y2-Y)./((y2-Y).^2+(x2-X).^2).^1.5
+champ (x,y,(ex1' + ex2'),(ey1' + ey2'))
