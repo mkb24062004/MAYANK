@@ -1,0 +1,27 @@
+clc;clf;clear;
+//Electric field due to charged conducting cylinder
+//Electric potential due to charged conducting cylinder
+//MAYANK BARMAN
+//8562
+q=10
+R=4
+k=8.9e9
+L=5
+x1=linspace(0.01,R,100)
+x2=linspace(R,10*R,100)
+E1=zeros(100)
+E2=(2.*k.*q)./(x2.*L)
+subplot(2,1,1)
+plot(x1, E1)
+plot(x2,E2)
+title("Electric field due to charged conducting cylinder")
+xlabel("X-axis")
+ylabel("Y-axis")
+V1=k.*q./R
+V2=k.*q./x2
+subplot(2,1,2)
+plot(x1,V1)
+plot(x2,V2)
+title("Electric potential due to charged conducting cylinder")
+xlabel("X-axis")
+ylabel("Y-axis")
