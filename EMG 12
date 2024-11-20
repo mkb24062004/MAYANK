@@ -1,0 +1,27 @@
+Aim - Radial profile of Electric field and Electric potential due to a Uniformely charged Non-Conducting Sphere
+//Mayank barman
+//8562
+clc;
+clear;
+clf q =
+10 k =
+9e9
+R = 4
+X1 = linspace(0.01,R,100)
+X2 = linspace(R,10*R,100)
+E1 = k.*q.*X1./R.^3 E2
+= k.*q./X2.^2
+subplot(2,1,1)
+plot(X1,E1)
+plot(X2,E2)
+xlabel("x")
+ylabel("E")
+title("Radial profile of Electric field due to a Uniformely
+charged Non- Conducting Sphere")
+V1 =((k.q)./(2*R))(3-(X1.^2/R.^2))
+V2 = (k.*q)./X2
+subplot(2,1,2)
+plot(X1,V1) plot(X2,V2)
+xlabel("x") ylabel("V")
+title("Radial profile of Electric potential due to a Uniformely
+charged Non- Conducting Sphere")
