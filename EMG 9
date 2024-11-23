@@ -1,0 +1,17 @@
+//Plot the radial profile of electric field and electric potential due to a charged circular ring 
+//Mayank 8562 
+clc 
+clf 
+clear 
+close
+k=8.99*10^9 
+q=10 
+r=2 
+x=-10:0.1:10 
+E=(k*q*x)./(r.^2+x.^2).^1.5 
+subplot(1,2,1) 
+xtitle("Electric field due to a charged circular ring ","Distance","Electric field") plot(x,E) 
+V=(k*q)./(r.^2+x.^2).^0.5 
+subplot(1,2,2) 
+xtitle("Electric potential due to a charged circular ring ","Distance","Electric potential") 
+plot(x,V)
