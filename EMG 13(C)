@@ -1,0 +1,14 @@
+//Surface charge density is 4xy^2 determine total charge contained in a sheet where x ranges from -2 to 3 and y ranges from -2 to 3
+clc
+clf
+clear
+close
+function y=f(x)
+ y=x
+endfunction
+function Y=f1(Y)
+ y=Y^2
+endfunction
+L=integrate('f(x)','x',-2,3)
+L2=integrate('f1(Y)','Y',-2,3)
+disp("The total charge contained in the sheet is -> ",4*L*L2)
