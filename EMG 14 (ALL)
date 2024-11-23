@@ -1,0 +1,67 @@
+Aim: Determine the magnetic field, (a) due to straight current carrying conductor of finite length, (b) due 
+to straight current carrying conductor of infinite length, (c) at the center of a square shaped current 
+carrying coil, (d) at the center of an equilateral triangle shaped current carrying coil, (e) at the center of 
+regular hexagon uniform electric field,(f) at the center of a polygon shaped current carrying conductor
+//Determine the magnetic field, (a) due to straight current carrying 
+conductor of finite length, (b) due to straight current carrying 
+conductor of infinite length
+// A/B
+clc
+clf
+clear
+close
+k=1e-7
+a=linspace(0.1, 10,80)
+I=4
+l=0.5
+function y=f(x)
+ y=cos(x)
+endfunction
+function y=g(l, a)
+ y=atan(l/a)
+endfunction
+for i=1:80
+ x1=-g (l/2,a(i))
+ x2= g(l/2,a(i))
+ B(i) = ((k*I)/a(i))*integrate('f(x)','x',x1,x2)
+ B1(i) = (k*2*I)/a(i)
+end
+xtitle ("Magnetic Field due to a straight current carying conductor of 
+finnite and infinite length","Distance","Magnetic field")
+plot(a,B)
+plot(a,B1,'ro-')
+
+
+
+Program: (C),(D),(E),(F)
+
+//Determine the magnetic field (c) at the center of a square shaped 
+current carrying coil, (d) at the center of an equilateral traingle 
+shaped current carrying coil, (e) at the center of regular 
+hexagonuniform electric field (F) at the center of regular Polygon 
+shaped current carrying coil
+
+clc
+clf
+clear
+close
+//(C)
+u0=(4*%pi)*(10^-7)
+i=input("Please give the current in the coil->")
+L=input("Please give the side of the square->")
+B=(sqrt(2)*u0*i)/(%pi*(L/2))
+disp("The Magnetic field(In Weber) at the center of a square shaped current carying coil is ->",B)
+//(D)
+K=1e-7
+a=input("Please give the side of the Triangle->")
+B1= 9*i*K*(1/a)
+disp("The Magnetic field(in weber) at the center of an equilateral triangle is->",B1)
+//(E)
+a1=input("Please give the side of the hexagon ->")
+B2=(sqrt(3)*u0*i)/(%pi*a1)
+disp("The Magnetic field(in weber) at the center of a hexagon current carying coil is->",B2)
+//(F)
+n=input("Please give the no of sides of the polygon->")
+a2=input("Please give the side of the polygon->")
+B3= ((n*K*i)/((a2/2)*tan((%pi/2)-(%pi/n))))*2*sin(%pi/n)
+disp("The Magneetic field(in weber) at the center of the regular polygon is ->",B3)
