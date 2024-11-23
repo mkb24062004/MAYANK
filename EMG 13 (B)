@@ -1,0 +1,11 @@
+//Linear charge density is L=L0+x/2 determine total charge contained in the rod from x=0 to x=1
+clc
+clf
+clear
+close
+L0=5
+function y=f(x)
+ y=L0+x/2
+endfunction
+L=integrate('f(x)','x',0,1)
+disp("The Total charge contained in the rod is -> ",L)
