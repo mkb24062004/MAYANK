@@ -1,0 +1,28 @@
+A)//The Point charges -1nC, 4nc and 3nc are located at (0,0,0) (0,0,1) and (1,0, 0) determine the energy in the system
+clc
+clf
+clear
+close
+K=8.99*10^9
+N=3
+q(1)=input("Please give charge for Q1 -> ")
+q(2)=input("Please give charge for Q2 -> ")
+q(3)=input("Please give charge for Q3 -> ")
+x(1)=input("Please Give the X coordinate of Q1 -> ")
+y(1)=input("Please Give the Y coordinate of Q1 -> ")
+z(1)=input("Please Give the Z coordinate of Q1 -> ")
+x(2)=input("Please Give the X coordinate of Q2 -> ")
+y(2)=input("Please Give the Y coordinate of Q2 -> ")
+z(2)=input("Please Give the Z coordinate of Q2 -> ")
+x(3)=input("Please Give the X coordinate of Q3 -> ")
+y(3)=input("Please Give the Y coordinate of Q3 -> ")
+z(3)=input("Please Give the Z coordinate of Q3 -> ")
+s=0
+for j=1:N-1
+ for k=1+j:N
+ r=sqrt((x(j)-x(k)).^2+(y(j)-y(k)).^2+(z(j)-z(k)).^2)
+ s=s+(q(j).*q(k))./r
+ end
+end
+ans=s.*K
+disp("The Total Energy in the system is -> ",ans)
