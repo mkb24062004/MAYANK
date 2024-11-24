@@ -1,6 +1,5 @@
 //EXPERIMENT:1:
-//AIM: Convert the coordinates of a point from/to Cartesian and 
-cylindrical coordinate system.
+//AIM: Convert the coordinates of a point from/to Cartesian and cylindrical coordinate system.
 //MAYANK BARMAN
 //8562
 clc
